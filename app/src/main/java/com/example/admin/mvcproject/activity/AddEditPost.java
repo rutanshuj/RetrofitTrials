@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.example.admin.mvcproject.R;
 import com.example.admin.mvcproject.model.Post;
-import com.example.admin.mvcproject.rest.ApiClient;
 import com.example.admin.mvcproject.rest.ApiInterface;
+import com.example.admin.mvcproject.rest.PostClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,7 +35,7 @@ public class AddEditPost extends AppCompatActivity{
         Button submitBtn = (Button) findViewById(R.id.btn_submit);
         mResponseTv = (TextView) findViewById(R.id.tv_response);
 
-         apiService = ApiClient.getClient().create(ApiInterface.class);
+         apiService = PostClient.getClient().create(ApiInterface.class);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
