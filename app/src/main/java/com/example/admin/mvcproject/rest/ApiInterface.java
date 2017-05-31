@@ -13,12 +13,13 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
-    @GET("/top_rated")
+    @GET("movie/top_rated")
     Call<MoviesResponse> getTopRatedMovies(@Query("api_key") String apiKey);
 
 
@@ -34,5 +35,10 @@ public interface ApiInterface {
     @POST("/retrofit_tutorial/retrofit_client.php")
     Call<ServerResponse> uploadFile(@Part MultipartBody.Part file, @Part("file")RequestBody name);
 
-
+    @PUT("/posts/{id}")
+    @FormUrlEncoded
+    Call<Post> updatePost(@Path("id") long id,
+                          @Field("title") String title,
+                          @Field("body") String body,
+                          @Field("userId") long userId);
 }

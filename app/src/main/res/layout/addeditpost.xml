@@ -30,18 +30,32 @@
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_marginTop="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
         android:background="@color/colorAccent"
-        android:textColor="@android:color/white"
-        android:text="Submit"/>
+        android:text="Submit"
+        android:textColor="@android:color/white" />
 
+    <Button
+        android:layout_marginTop="10dp"
+        android:text="Update"
+        android:id="@+id/update_bttn"
+        android:textColor="@android:color/white"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/tv_response"
         android:layout_marginTop="35dp"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/put_response"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

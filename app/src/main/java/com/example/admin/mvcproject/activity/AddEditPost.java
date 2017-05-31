@@ -21,8 +21,9 @@ import retrofit2.Response;
 
 
 public class AddEditPost extends AppCompatActivity{
-    private TextView mResponseTv;
+    private TextView mResponseTv, mPutResponse;
     private ApiInterface apiService;
+    private Button b1;
     private static final String TAG = AddEditPost.class.getSimpleName();
 
     @Override
@@ -33,9 +34,11 @@ public class AddEditPost extends AppCompatActivity{
         final EditText titleEt = (EditText) findViewById(R.id.et_title);
         final EditText bodyEt = (EditText) findViewById(R.id.et_body);
         Button submitBtn = (Button) findViewById(R.id.btn_submit);
+        b1 = (Button) findViewById(R.id.update_bttn);
         mResponseTv = (TextView) findViewById(R.id.tv_response);
+        mPutResponse = (TextView) findViewById(R.id.put_response);
 
-         apiService = PostClient.getClient().create(ApiInterface.class);
+        apiService = PostClient.getClient().create(ApiInterface.class);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +48,34 @@ public class AddEditPost extends AppCompatActivity{
                 if(!TextUtils.isEmpty(title) && !TextUtils.isEmpty(body)) {
                     sendPost(title, body);
                 }
+            }
+        });
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = titleEt.getText().toString().trim();
+                String body = bodyEt.getText().toString().trim();
+                if(!TextUtils.isEmpty(title) && !TextUtils.isEmpty(body)) {
+                    putResponse(title, body);
+                }
+            }
+        });
+    }
+
+    private void putResponse(String title, String body) {
+        apiService.updatePost(12, title, body, 1).enqueue(new Callback<Post>() {
+            @Override
+            public void onResponse(Call<Post> call, Response<Post> response) {
+                if(mPutResponse.getVisibility() == View.GONE) {
+                    mPutResponse.setVisibility(View.VISIBLE);
+                }
+                mPutResponse.setText(response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<Post> call, Throwable t) {
+
             }
         });
     }
