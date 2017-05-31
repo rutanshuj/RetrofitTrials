@@ -10,7 +10,7 @@ import com.example.admin.mvcproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button b1, b2;
+    private Button b1, b2, b3;
 
 
     @Override
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         b1 = (Button) findViewById(R.id.nextscreen);
         b2 = (Button) findViewById(R.id.rfs);
+        b3 = (Button) findViewById(R.id.button3);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent j = new Intent(MainActivity.this, Retrofit.class);
                 startActivity(j);
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent k = new Intent(MainActivity.this, AddEditPost.class);
+                startActivity(k);
             }
         });
     }

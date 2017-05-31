@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.admin.mvcproject.R;
-import com.example.admin.mvcproject.model.Posts;
+import com.example.admin.mvcproject.model.Post;
 import com.example.admin.mvcproject.rest.ApiClient;
 import com.example.admin.mvcproject.rest.ApiInterface;
 
@@ -50,16 +50,16 @@ public class AddEditPost extends AppCompatActivity{
     }
 
     public void sendPost(String title, String body) {
-        apiService.savePost(1, 1, title, body).enqueue(new Callback<Posts>() {
+        apiService.savePost(title, body,1).enqueue(new Callback<Post>() {
 
             @Override
-            public void onResponse(Call<Posts> call, Response<Posts> response) {
+            public void onResponse(Call<Post> call, Response<Post> response) {
                 showResponse(response.body().toString());
                 Log.i(TAG, "post submitted to API." + response.body().toString());
             }
 
             @Override
-            public void onFailure(Call<Posts> call, Throwable t) {
+            public void onFailure(Call<Post> call, Throwable t) {
                 Log.e(TAG, "Unable to submit post to API.");
             }
         });

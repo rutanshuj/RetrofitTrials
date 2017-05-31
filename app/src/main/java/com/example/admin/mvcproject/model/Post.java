@@ -3,7 +3,7 @@ package com.example.admin.mvcproject.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Posts {
+public class Post {
     @SerializedName("userId")
     private Integer user_id;
     @SerializedName("id")
@@ -13,7 +13,7 @@ public class Posts {
     @SerializedName("body")
     private String body;
 
-    public Posts(Integer user_id, Integer p_id, String title, String body) {
+    public Post(Integer user_id, Integer p_id, String title, String body) {
         this.user_id = user_id;
         this.p_id = p_id;
         this.title = title;
@@ -50,5 +50,15 @@ public class Posts {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                ", userId=" + user_id +
+                ", id=" + p_id +
+                '}';
     }
 }

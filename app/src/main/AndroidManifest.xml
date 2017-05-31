@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.VideoPlayer" />
-        <activity android:name=".activity.Retrofit"></activity>
+        <activity android:name=".activity.Retrofit"/>
+        <activity android:name=".activity.AddEditPost"/>
     </application>
 
 </manifest>
