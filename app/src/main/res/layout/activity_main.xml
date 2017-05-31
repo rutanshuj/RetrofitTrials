@@ -55,7 +55,7 @@
                 android:text="POST" />
 
             <Button
-                android:text="Tutorial"
+                android:text="Image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tutorial"

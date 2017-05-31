@@ -3,6 +3,7 @@
     package="com.example.admin.mvcproject">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
@@ -23,6 +24,7 @@
         <activity android:name=".activity.Retrofit"/>
         <activity android:name=".activity.AddEditPost"/>
         <activity android:name=".activity.RetrofitTutorial"/>
+        <activity android:name=".activity.RetrofitImageUploadingTutorial"/>
     </application>
 
 </manifest>

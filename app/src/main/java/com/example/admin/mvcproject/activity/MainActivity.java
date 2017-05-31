@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent l = new Intent(MainActivity.this, RetrofitTutorial.class);
+                Intent l = new Intent(MainActivity.this, RetrofitImageUploadingTutorial.class);
                 startActivity(l);
             }
         });
