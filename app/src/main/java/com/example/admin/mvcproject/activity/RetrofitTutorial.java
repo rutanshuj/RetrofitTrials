@@ -38,16 +38,9 @@ public class RetrofitTutorial extends AppCompatActivity {
         t1 = (TextView) findViewById(R.id.details);
         progressDialog = new ProgressDialog(this);
 
-        progressDialog.setMessage("Getting done");
+        progressDialog.setMessage("Getting data");
 
         getBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        insertBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
