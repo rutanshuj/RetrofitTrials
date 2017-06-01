@@ -25,6 +25,16 @@
         <activity android:name=".activity.AddEditPost"/>
         <activity android:name=".activity.RetrofitTutorial"/>
         <activity android:name=".activity.RetrofitImageUploadingTutorial"/>
+
+        <service
+            android:name="com.example.admin.mvcproject.sync.SunshineAuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
     </application>
 
 </manifest>
